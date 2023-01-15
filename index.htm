@@ -1,0 +1,1160 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bar do Alex</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+</style>
+<script src="https://use.fontawesome.com/your-embed-code.js"></script> 
+
+
+</head>
+<body class="w3-light-grey">
+
+<!--stylo carrinho form-->
+<style>
+.row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    margin: 0 -16px;
+    color: black;
+  }
+  
+  .col-25 {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+  }
+  
+  .col-50 {
+    -ms-flex: 50%; /* IE10 */
+    flex: 50%;
+  }
+  
+  .col-75 {
+    -ms-flex: 75%; /* IE10 */
+    flex: 75%;
+  }
+  
+  .col-25,
+  .col-50,
+  .col-75 {
+    padding: 0 16px;
+  }
+  
+  .container {
+    background-color: #f2f2f2;
+    padding: 5px 20px 15px 20px;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+  }
+  
+  input[type=text] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  label {
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .icon-container {
+    margin-bottom: 20px;
+    padding: 7px 0;
+    font-size: 24px;
+  }
+  
+  .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+  }
+  
+  .btn:hover {
+    background-color: #45a049;
+  }
+  
+  span.price {
+    float: right;
+    color: grey;
+  }
+  
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
+  @media (max-width: 800px) {
+    .row {
+      flex-direction: column-reverse;
+    }
+    .col-25 {
+      margin-bottom: 20px;
+    }
+  }
+
+
+</style>
+
+
+ <style>
+    
+#myBtn {
+  display: block;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius:50px;
+}
+
+ </style>
+
+
+    
+
+    
+<style>
+    /* The Overlay (background) */
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+  height: 100%;
+  width: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0,0,0); /* Black fallback color */
+  background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 25%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+</style>
+
+
+   
+    
+
+    <style>
+        .accordion {
+          background-color: #eee;
+          color: #444;
+          cursor: pointer;
+          padding: 18px;
+          width: 100%;
+          border: none;
+          text-align: left;
+          outline: none;
+          font-size: 15px;
+          transition: 0.4s;
+        }
+        
+        .active, .accordion:hover {
+          background-color: #ccc; 
+        }
+        
+        .panel {
+          padding: 0 18px;
+          display: none;
+          background-color: white;
+          overflow: hidden;
+        }
+        </style>
+        </head>
+        <body>
+        
+     
+
+
+<!-- Navigation Bar -->
+<div class="w3-bar w3-white w3-large">
+  <a href="#" class="w3-bar-item w3-button w3-red w3-mobile"><i class="fa fa-bed w3-margin-right"></i>Alex-Bar</a>
+  <a href="#rooms" class="w3-bar-item w3-button w3-mobile">Lanches</a>
+  <a href="#about" class="w3-bar-item w3-button w3-mobile">Bebidas</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-mobile">Açai</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-right w3-light-grey w3-mobile">Açai</a>
+  
+</div>
+
+
+
+<!-- Header -->
+<header class="w3-display-container w3-content" style="max-width:1500px;">
+  <img class="w3-image" src="images/hotel.jpg" alt="The Hotel" style="min-width:1000px" width="1500" height="800">
+  <div class="w3-display-left w3-padding w3-col l6 m8">
+    <div class="w3-container w3-red">
+      <h2><i class="fa fa-bed w3-margin-right"></i>Horario de funcionamento</h2>
+    </div>
+  <div class="w3-container w3-white w3-padding-16">
+    <h4>12:00 - 23:00  Segundas há Domongos</h4>
+       <!-- <form action="/action_page.php" target="_blank">
+        <div class="w3-row-padding" style="margin:0 -16px;">
+          <div class="w3-half w3-margin-bottom">
+            <label><i class="fa fa-calendar-o"></i> Check In</label>
+            <input class="w3-input w3-border" type="text" placeholder="DD MM YYYY" name="CheckIn" required>
+          </div>
+          <div class="w3-half">
+            <label><i class="fa fa-calendar-o"></i> Check Out</label>
+            <input class="w3-input w3-border" type="text" placeholder="DD MM YYYY" name="CheckOut" required>
+          </div>
+        </div>
+        <div class="w3-row-padding" style="margin:8px -16px;">
+          <div class="w3-half w3-margin-bottom">
+            <label><i class="fa fa-male"></i> Adults</label>
+            <input class="w3-input w3-border" type="number" value="1" name="Adults" min="1" max="6">
+          </div>
+          <div class="w3-half">
+            <label><i class="fa fa-child"></i> Kids</label>
+          <input class="w3-input w3-border" type="number" value="0" name="Kids" min="0" max="6">
+          </div>
+        </div>
+        <button class="w3-button w3-dark-grey" type="submit"><i class="fa fa-search w3-margin-right"></i> Search availability</button>
+      </form>-->
+    </div>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1532px;">
+
+  <div class="w3-container w3-margin-top" id="rooms">
+    <h3>Lanches</h3>
+    <p>Faça Seu Pedido</p>
+  </div>
+  
+ <!-- <div class="w3-row-padding">
+    <div class="w3-col m3">
+      <label><i class="fa fa-calendar-o"></i> Check In</label>
+      <input class="w3-input w3-border" type="text" placeholder="DD MM YYYY">
+    </div>
+    <div class="w3-col m3">
+      <label><i class="fa fa-calendar-o"></i> Check Out</label>
+      <input class="w3-input w3-border" type="text" placeholder="DD MM YYYY">
+    </div>
+    <div class="w3-col m2">
+      <label><i class="fa fa-male"></i> Adults</label>
+      <input class="w3-input w3-border" type="number" placeholder="1">
+    </div>
+    <div class="w3-col m2">
+      <label><i class="fa fa-child"></i> Kids</label>
+      <input class="w3-input w3-border" type="number" placeholder="0">
+    </div>
+    <div class="w3-col m2">
+      <label><i class="fa fa-search"></i> Search</label>
+      <button class="w3-button w3-block w3-black">Search</button>
+    </div>
+  </div>-->
+  
+  <form method="post">
+  <div class="w3-row-padding w3-padding-16">
+    <div class="w3-third w3-margin-bottom">
+      <img src="images/room_single.jpg" alt="Norway" style="width:100%">
+      
+      <div class="w3-container w3-white">
+        <h3     id="Xsalada" >Xis Salada <i class="fa fa-cutlery"></i></h3>
+        
+        <button type="button" class="accordion">IGREDIENTES</button>
+        <div class="panel">
+          <p>Pão, Maionese, Ovo, Hambúrger, Ervilha, Milho, Tomate, Alface, Queijo</p>
+        </div>
+        <h6 class="w3-opacity">18,00$</h6>
+    
+        <label><i class="fa fa-child"></i> Quantidade</label>
+        <input class="w3-input w3-border" type="number" placeholder="0" max="20">
+        <br>
+
+          
+        <button type="button" onclick=" additemNoAray()" class="w3-button w3-block w3-black w3-margin-bottom">Add Carrinho</button>
+      </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <img src="images/room_double.jpg" alt="Norway" style="width:100%">
+      <div class="w3-container w3-white">
+        <h3>Xis Salada Acebolado  <i class="fa fa-cutlery"></i></h3>
+        <button type="button" class="accordion">IGREDIENTES</button>
+        <div class="panel">
+          <p>Pão, Maionese, Ovo, Hambúrger, Ervilha, Milho, Tomate, Alface, Queijo, Cebola</p>
+        </div>
+        <h6 class="w3-opacity">valor $20,00</h6>
+        <label><i class="fa fa-child"></i> Quantidade</label>
+        <input class="w3-input w3-border" type="number" placeholder="0" max="20">
+        <br>
+
+        
+        <button class="w3-button w3-block w3-black w3-margin-bottom">Add Carrinho</button>
+      </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <img src="images/room_deluxe.jpg" alt="Norway" style="width:100%">
+      <div class="w3-container w3-white">
+        <h3>Xis Salada Duplo  <i class="fa fa-cutlery"></i></h3>
+        <button type="button" class="accordion">IGREDIENTES</button>
+        <div class="panel">
+          <p>Pão, Maionese, 2 Ovo, 2 Hambúrger, Ervilha, Milho, Tomate, Alface, Queijo</p>
+        </div>
+        <h6 class="w3-opacity">valor $27,90</h6>
+        <label><i class="fa fa-child"></i> Quantidade</label>
+        <input class="w3-input w3-border" type="number" placeholder="0" max="20">
+        <br>
+        <button class="w3-button w3-block w3-black w3-margin-bottom">Add Carrinho</button>
+      </div>
+    </div>
+
+  <div class="w3-row-padding w3-padding-16">
+    <div class="w3-third w3-margin-bottom">
+      <img src="images/room_single.jpg" alt="Norway" style="width:100%">
+      <div class="w3-container w3-white">
+        <h3>XisFrango  <i class="fa fa-cutlery"></i></h3>
+        <button type="button" class="accordion">IGREDIENTES</button>
+        <div class="panel">
+          <p>Pão, Maionese, Ovo, Frango, Ervilha, Milho, Tomate, Alface, Queijo</p>
+        </div>
+        <h6 class="w3-opacity">valor $19,00</h6>
+        <label><i class="fa fa-child"></i> Quantidade</label>
+        <input class="w3-input w3-border" type="number" placeholder="0" max="20">
+        <br>
+        <button class="w3-button w3-block w3-black w3-margin-bottom">Add Carrinho</button>
+      </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <img src="images/room_double.jpg" alt="Norway" style="width:100%">
+      <div class="w3-container w3-white">
+        <h3>Xis Frango Acebolado  <i class="fa fa-cutlery"></i></h3>
+        <button type="button" class="accordion">IGREDIENTES</button>
+        <div class="panel">
+          <p>Pão, Maionese, Ovo, Frango, Ervilha, Milho, Tomate, Alface, Queijo, Cebola</p>
+        </div>
+        <h6 class="w3-opacity">valor $21,00</h6>
+        <label><i class="fa fa-child"></i> Quantidade</label>
+        <input class="w3-input w3-border" type="number" placeholder="0" max="20">
+        <br>
+        <button class="w3-button w3-block w3-black w3-margin-bottom">Add Carrinho</button>
+      </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <img src="images/room_deluxe.jpg" alt="Norway" style="width:100%">
+      <div class="w3-container w3-white">
+        <h3>Xis Frango C/ Bacon <i class="fa fa-cutlery"></i></h3>
+        <button type="button" class="accordion">IGREDIENTES</button>
+        <div class="panel">
+          <p>Pão, Maionese, Ovo, Frango, Ervilha, Milho, Tomate, Alface, Queijo, Bacon</p>
+        </div>
+        <h6 class="w3-opacity">valor $25,90</h6>
+        <label><i class="fa fa-child"></i> Quantidade</label>
+        <input class="w3-input w3-border" type="number" placeholder="0" max="20">
+        <br>
+        <button class="w3-button w3-block w3-black w3-margin-bottom">Add Carrinho</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-row-padding w3-padding-16">
+    <div class="w3-third w3-margin-bottom">
+      <img src="images/room_single.jpg" alt="Norway" style="width:100%">
+      <div class="w3-container w3-white">
+        <h3>XisFrango  <i class="fa fa-cutlery"></i></h3>
+        <button type="button" class="accordion">IGREDIENTES</button>
+        <div class="panel">
+          <p>Pão, Maionese, Ovo, Frango, Ervilha, Milho, Tomate, Alface, Queijo</p>
+        </div>
+        <h6 class="w3-opacity">valor $19,00</h6>
+        <label><i class="fa fa-child"></i> Quantidade</label>
+        <input class="w3-input w3-border" type="number" placeholder="0" max="20">
+        <br>
+        <button class="w3-button w3-block w3-black w3-margin-bottom">Add Carrinho</button>
+      </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <img src="images/room_double.jpg" alt="Norway" style="width:100%">
+      <div class="w3-container w3-white">
+        <h3>Xis Frango Acebolado  <i class="fa fa-cutlery"></i></h3>
+        <button type="button" class="accordion">IGREDIENTES</button>
+        <div class="panel">
+          <p>Pão, Maionese, Ovo, Frango, Ervilha, Milho, Tomate, Alface, Queijo, Cebola</p>
+        </div>
+        <h6 class="w3-opacity">valor $21,00</h6>
+        <label><i class="fa fa-child"></i> Quantidade</label>
+        <input class="w3-input w3-border" type="number" placeholder="0" max="20">
+        <br>
+        <button class="w3-button w3-block w3-black w3-margin-bottom">Add Carrinho</button>
+      </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <img src="images/room_deluxe.jpg" alt="Norway" style="width:100%">
+      <div class="w3-container w3-white">
+        <h3>Xis Frango C/ Bacon <i class="fa fa-cutlery"></i></h3>
+        <button type="button" class="accordion">IGREDIENTES</button>
+        <div class="panel">
+          <p>Pão, Maionese, Ovo, Frango, Ervilha, Milho, Tomate, Alface, Queijo, Bacon</p>
+        </div>
+        <h6 class="w3-opacity">valor $25,90</h6>
+        <label><i class="fa fa-child"></i> Quantidade</label>
+        <input class="w3-input w3-border" type="number" placeholder="0" max="20">
+        <br>
+        <button class="w3-button w3-block w3-black w3-margin-bottom">Add Carrinho</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-row-padding w3-padding-16">
+    <div class="w3-third w3-margin-bottom">
+      <img src="images/room_single.jpg" alt="Norway" style="width:100%">
+      <div class="w3-container w3-white">
+        <h3>Xis Calabresa  <i class="fa fa-cutlery"></i></h3>
+        <button type="button" class="accordion">IGREDIENTES</button>
+        <div class="panel">
+          <p>Pão, Maionese, Ovo, Calabresa, Ervilha, Milho, Tomate, Alface, Queijo</p>
+        </div>
+        <h6 class="w3-opacity">valor $19,00</h6>
+        <label><i class="fa fa-child"></i> Quantidade</label>
+        <input class="w3-input w3-border" type="number" placeholder="0" max="20">
+        <br>
+        <button class="w3-button w3-block w3-black w3-margin-bottom">Add Carrinho</button>
+      </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <img src="images/room_double.jpg" alt="Norway" style="width:100%">
+      <div class="w3-container w3-white">
+        <h3>Xis Calabresa Acebolado<i class="fa fa-cutlery"></i></h3>
+        <button type="button" class="accordion">IGREDIENTES</button>
+        <div class="panel">
+          <p>Pão, Maionese, Ovo, Calabresa, Ervilha, Milho, Tomate, Alface, Queijo, Cebola</p>
+        </div>
+        <h6 class="w3-opacity">valor $21,00</h6>
+        <label><i class="fa fa-child"></i> Quantidade</label>
+        <input class="w3-input w3-border" type="number" placeholder="0" max="20">
+        <br>
+        <button class="w3-button w3-block w3-black w3-margin-bottom">Add Carrinho</button>
+      </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <img src="images/room_deluxe.jpg" alt="Norway" style="width:100%">
+      <div class="w3-container w3-white">
+        <h3>Xis Calabresa C/ Bife <i class="fa fa-cutlery"></i></h3>
+        <button type="button" class="accordion">IGREDIENTES</button>
+        <div class="panel">
+          <p>Pão, Maionese, Ovo, Calabresa, Hamburger Ervilha, Milho, Tomate, Alface, Queijo</p>
+        </div>
+        <h6 class="w3-opacity">valor $26,00</h6>
+        <label><i class="fa fa-child"></i> Quantidade</label>
+        <input class="w3-input w3-border" type="number" placeholder="0" max="20">
+        <br>
+        <button class="w3-button w3-block w3-black w3-margin-bottom">Add Carrinho</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-row-padding w3-padding-16">
+    <div class="w3-third w3-margin-bottom">
+      <img src="images/room_single.jpg" alt="Norway" style="width:100%">
+      <div class="w3-container w3-white">
+        <h3>Xis Bacon  <i class="fa fa-cutlery"></i></h3>
+        <button type="button" class="accordion">IGREDIENTES</button>
+        <div class="panel">
+          <p>Pão, Maionese, Ovo, Bacon, Hamburger, Ervilha, Milho, Tomate, Alface, Queijo</p>
+        </div>
+        <h6 class="w3-opacity">valor $22,00</h6>
+        <label><i class="fa fa-child"></i> Quantidade</label>
+        <input class="w3-input w3-border" type="number" placeholder="0" max="20">
+        <br>
+        <button class="w3-button w3-block w3-black w3-margin-bottom">Add Carrinho</button>
+      </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <img src="images/room_double.jpg" alt="Norway" style="width:100%">
+      <div class="w3-container w3-white">
+        <h3>Xis Bacon Acebolado  <i class="fa fa-cutlery"></i></h3>
+        <button type="button" class="accordion">IGREDIENTES</button>
+        <div class="panel">
+          <p>Pão, Maionese, Ovo, Bacon, Hamburger, Ervilha, Milho, Tomate, Alface, Queijo, Cebola</p>
+        </div>
+        <h6 class="w3-opacity">valor $24,00</h6>
+        <label><i class="fa fa-child"></i> Quantidade</label>
+        <input class="w3-input w3-border" type="number" placeholder="0" max="20">
+        <br>
+        <button class="w3-button w3-block w3-black w3-margin-bottom">Add Carrinho</button>
+      </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <img src="images/room_deluxe.jpg" alt="Norway" style="width:100%">
+      <div class="w3-container w3-white">
+        <h3>Xis Coração <i class="fa fa-cutlery"></i></h3>
+        <button type="button" class="accordion">IGREDIENTES</button>
+        <div class="panel">
+          <p>Pão, Maionese, Ovo, Coração, Ervilha, Milho, Tomate, Alface, Queijo</p>
+        </div>
+        <h6 class="w3-opacity">valor $23,90</h6>
+        <label><i class="fa fa-child"></i> Quantidade</label>
+        <input class="w3-input w3-border" type="number" placeholder="0" max="20">
+        <br>
+        <button class="w3-button w3-block w3-black w3-margin-bottom">Add Carrinho</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-row-padding w3-padding-16">
+    <div class="w3-third w3-margin-bottom">
+      <img src="images/room_single.jpg" alt="Norway" style="width:100%">
+      <div class="w3-container w3-white">
+        <h3>Xis Coração Acebolado  <i class="fa fa-cutlery"></i></h3>
+        <button type="button" class="accordion">IGREDIENTES</button>
+        <div class="panel">
+          <p>Pão, Maionese, Ovo, Coração, Ervilha, Milho, Tomate, Alface, Queijo, Cebola/p>
+        </div>
+        <h6 class="w3-opacity">valor $25,90</h6>
+        <label><i class="fa fa-child"></i> Quantidade</label>
+        <input class="w3-input w3-border" type="number" placeholder="0" max="20">
+        <br>
+        <button class="w3-button w3-block w3-black w3-margin-bottom">Add Carrinho</button>
+      </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <img src="images/room_double.jpg" alt="Norway" style="width:100%">
+      <div class="w3-container w3-white">
+        <h3>Xis Coração C/ Bife <i class="fa fa-cutlery"></i></h3>
+        <button type="button" class="accordion">IGREDIENTES</button>
+        <div class="panel">
+          <p>Pão, Maionese, Ovo, Coração, Hamburger, Ervilha, Milho, Tomate, Alface, Queijo, Cebola</p>
+        </div>
+        <h6 class="w3-opacity">valor $28,90</h6>
+        <label><i class="fa fa-child"></i> Quantidade</label>
+        <input class="w3-input w3-border" type="number" placeholder="0" max="20">
+        <br>
+        <button class="w3-button w3-block w3-black w3-margin-bottom">Add Carrinho</button>
+      </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <img src="images/room_deluxe.jpg" alt="Norway" style="width:100%">
+      <div class="w3-container w3-white">
+        <h3>Xis Coração C/ Bacon <i class="fa fa-cutlery"></i></h3>
+        <button type="button" class="accordion">IGREDIENTES</button>
+        <div class="panel">
+          <p>Pão, Maionese, Ovo, Coração, Bacon, Ervilha, Milho, Tomate, Alface, Queijo</p>
+        </div>
+        <h6 class="w3-opacity">valor $28,90</h6>
+        <label><i class="fa fa-child"></i> Quantidade</label>
+        <input class="w3-input w3-border" type="number" placeholder="0" max="20">
+        <br>
+        <button class="w3-button w3-block w3-black w3-margin-bottom">Add Carrinho</button>
+      </div>
+    </div>
+    
+    <div class="w3-third w3-margin-bottom">
+        <img src="images/room_deluxe.jpg" alt="Norway" style="width:100%">
+        <div class="w3-container w3-white">
+          <h3>Xis Entrevero <i class="fa fa-cutlery"></i></h3>
+          <button type="button" class="accordion">IGREDIENTES</button>
+          <div class="panel">
+            <p>Pão, Maionese, Ovo, Coração, Bacon, Frango, Suino, Calabresa, Carne, Ervilha, Milho, Tomate, Alface, Queijo</p>
+          </div>
+          <h6 class="w3-opacity">valor $29,90</h6>
+          <label><i class="fa fa-child"></i> Quantidade</label>
+          <input class="w3-input w3-border" type="number" placeholder="0" max="20">
+          <br>
+          <button class="w3-button w3-block w3-black w3-margin-bottom">Add Carrinho</button>
+        </div>
+      </div>
+      
+<!--Inicio do container -->
+      <div class="w3-container w3-margin-top" id="rooms">
+        <h3>Torradas/ Dogs </h3>
+      </div>
+
+      
+
+
+      <div class="w3-third w3-margin-bottom">
+        <img src="images/room_single.jpg" alt="Norway" style="width:100%">
+        <div class="w3-container w3-white">
+          <h3>Torrada  <i class="fa fa-cutlery"></i></h3>
+          <button type="button" class="accordion">IGREDIENTES</button>
+          <div class="panel">
+            <p>3 Fatias de Pão, Maionese, Tomate, Alface, Queijo e Ovo</p>
+          </div>
+          <h6 class="w3-opacity">valor $10,00</h6>
+          <label><i class="fa fa-child"></i> Quantidade</label>
+          <input class="w3-input w3-border" type="number" placeholder="0" max="20">
+          <br>
+          <button class="w3-button w3-block w3-black w3-margin-bottom">Add Carrinho</button>
+        </div>
+      </div>
+
+      <div class="w3-third w3-margin-bottom">
+        <img src="images/room_double.jpg" alt="Norway" style="width:100%">
+        <div class="w3-container w3-white">
+          <h3>Dog Salsicha<i class="fa fa-cutlery"></i></h3>
+          <button type="button" class="accordion">IGREDIENTES</button>
+          <div class="panel">
+            <p>Salsicha, Molho, Maionese, Tomate, Alface, Milho, Ervilha e Batata Palha</p>
+          </div>
+          <h6 class="w3-opacity">valor $12,00</h6>
+          <label><i class="fa fa-child"></i> Quantidade</label>
+          <input class="w3-input w3-border" type="number" placeholder="0" max="20">
+          <br>
+          <button class="w3-button w3-block w3-black w3-margin-bottom">Add Carrinho</button>
+        </div>
+      </div>
+
+      <div class="w3-third w3-margin-bottom">
+        <img src="images/room_deluxe.jpg" alt="Norway" style="width:100%">
+        <div class="w3-container w3-white">
+          <h3>Dog Frango <i class="fa fa-cutlery"></i></h3>
+          <button type="button" class="accordion">IGREDIENTES</button>
+          <div class="panel">
+            <p>Frango, Molho, Maionese, Tomate, Alface, Milho, Ervilha e Batata Palha</p>
+          </div>
+          <h6 class="w3-opacity">valor $15,90</h6>
+          <label><i class="fa fa-child"></i> Quantidade</label>
+          <input class="w3-input w3-border" type="number" placeholder="0" max="20">
+          <br>
+          <button class="w3-button w3-block w3-black w3-margin-bottom">Add Carrinho</button>
+        </div>
+      </div>
+
+      <div class="w3-third w3-margin-bottom">
+        <img src="images/room_single.jpg" alt="Norway" style="width:100%">
+        <div class="w3-container w3-white">
+          <h3>Dog Calabresa  <i class="fa fa-cutlery"></i></h3>
+          <button type="button" class="accordion">IGREDIENTES</button>
+          <div class="panel">
+            <p>Calabresa, Molho, Maionese, Tomate, Alface, Milho, Ervilha e Batata Palha</p>
+          </div>
+          <h6 class="w3-opacity">valor $16,90</h6>
+          <label><i class="fa fa-child"></i> Quantidade</label>
+          <input class="w3-input w3-border" type="number" placeholder="0" max="20">
+          <br>
+          <button class="w3-button w3-block w3-black w3-margin-bottom">Add Carrinho</button>
+        </div>
+      </div>
+
+      <div class="w3-third w3-margin-bottom">
+        <img src="images/room_double.jpg" alt="Norway" style="width:100%">
+        <div class="w3-container w3-white">
+          <h3>Dog Coração<i class="fa fa-cutlery"></i></h3>
+          <button type="button" class="accordion">IGREDIENTES</button>
+          <div class="panel">
+            <p>Coração, Molho, Maionese, Tomate, Alface, Milho, Ervilha e Batata Palha</p>
+          </div>
+          <h6 class="w3-opacity">valor $127,00</h6>
+          <label><i class="fa fa-child"></i> Quantidade</label>
+          <input class="w3-input w3-border" type="number" placeholder="0" max="20">
+          <br>
+          <button class="w3-button w3-block w3-black w3-margin-bottom">Add Carrinho</button>
+        </div>
+      </div>
+
+
+      <!--Inicio do container -->
+      <div class="w3-container w3-margin-top" id="rooms">
+        <h3>Fritas</h3>
+        
+      </div>
+
+      <div class="w3-third w3-margin-bottom">
+        <img src="images/room_deluxe.jpg" alt="Norway" style="width:100%">
+        <div class="w3-container w3-white">
+          <h3>Fritas Pequena 350g <i class="fa fa-cutlery"></i></h3>
+          <button type="button" class="accordion">IGREDIENTES</button>
+          <div class="panel">
+            <p>Batata 350g</p>
+          </div>
+          <h6 class="w3-opacity">valor $15,90</h6>
+          <label><i class="fa fa-child"></i> Quantidade</label>
+          <input class="w3-input w3-border" type="number" placeholder="0" max="20">
+          <br>
+          <button class="w3-button w3-block w3-black w3-margin-bottom">Add Carrinho</button>
+        </div>
+      </div>
+
+      <div class="w3-third w3-margin-bottom">
+        <img src="images/room_deluxe.jpg" alt="Norway" style="width:100%">
+        <div class="w3-container w3-white">
+          <h3>Fritas Média 450g <i class="fa fa-cutlery"></i></h3>
+          <button type="button" class="accordion">IGREDIENTES</button>
+          <div class="panel">
+            <p>Batata 450g</p>
+          </div>
+          <h6 class="w3-opacity">valor $20,00</h6>
+          <label><i class="fa fa-child"></i> Quantidade</label>
+          <input class="w3-input w3-border" type="number" placeholder="0" max="20">
+          <br>
+          <button class="w3-button w3-block w3-black w3-margin-bottom">Add Carrinho</button>
+        </div>
+      </div>
+
+
+      
+
+
+</form> <!--Formulario que vai enviar o nome de cada item do edido para o banco de dados. Estes itens serao os mesmos que sera enviado para o Carrinho -->
+</div>
+
+
+  <div class="w3-row-padding" id="about">
+    <div class="w3-col l4 12">
+      <h3>About</h3>
+      <h6>Our hotel is one of a kind. It is truely amazing. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</h6>
+    <p>We accept: <i class="fa fa-credit-card w3-large"></i> <i class="fa fa-cc-mastercard w3-large"></i> <i class="fa fa-cc-amex w3-large"></i> <i class="fa fa-cc-cc-visa w3-large"></i><i class="fa fa-cc-paypal w3-large"></i></p>
+    </div>
+    <div class="w3-col l8 12">
+      <!-- Image of location/map -->
+      <img src="images/map.jpg" class="w3-image w3-greyscale" style="width:100%;">
+    </div>
+  </div>
+  
+  <div class="w3-row-padding w3-large w3-center" style="margin:32px 0">
+    <div class="w3-third"><i class="fa fa-map-marker w3-text-red"></i> 423 Some adr, Chicago, US</div>
+    <div class="w3-third"><i class="fa fa-phone w3-text-red"></i> Phone: +00 151515</div>
+    <div class="w3-third"><i class="fa fa-envelope w3-text-red"></i> Email: mail@mail.com</div>
+  </div>
+
+  <div class="w3-panel w3-red w3-leftbar w3-padding-32">
+    <h6><i class="fa fa-info w3-deep-orange w3-padding w3-margin-right"></i> On demand, we can offer playstation, babycall, children care, dog equipment, etc.</h6>
+  </div>
+
+  <div class="w3-container">
+    <h3>Our Hotels</h3>
+    <h6>You can find our hotels anywhere in the world:</h6>
+  </div>
+  
+  <div class="w3-row-padding w3-padding-16 w3-text-white w3-large">
+    <div class="w3-half w3-margin-bottom">
+      <div class="w3-display-container">
+        <img src="images/cinqueterre.jpg" alt="Cinque Terre" style="width:100%">
+        <span class="w3-display-bottomleft w3-padding">Cinque Terre</span>
+      </div>
+    </div>
+    <div class="w3-half">
+      <div class="w3-row-padding" style="margin:0 -16px">
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="images/newyork2.jpg" alt="New York" style="width:100%">
+            <span class="w3-display-bottomleft w3-padding">New York</span>
+          </div>
+        </div>
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="images/sanfran.jpg" alt="San Francisco" style="width:100%">
+            <span class="w3-display-bottomleft w3-padding">San Francisco</span>
+          </div>
+        </div>
+      </div>
+      <div class="w3-row-padding" style="margin:0 -16px">
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="images/pisa.jpg" alt="Pisa" style="width:100%">
+            <span class="w3-display-bottomleft w3-padding">Pisa</span>
+          </div>
+        </div>
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="images/paris.jpg" alt="Paris" style="width:100%">
+            <span class="w3-display-bottomleft w3-padding">Paris</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-container w3-padding-32 w3-black w3-opacity w3-card w3-hover-opacity-off" style="margin:32px 0;">
+    <h2>Get the best offers first!</h2>
+    <p>Join our newsletter.</p>
+    <label>E-mail</label>
+    <input class="w3-input w3-border" type="text" placeholder="Your Email address">
+    <button type="button" class="w3-button w3-red w3-margin-top">Subscribe</button>
+  </div>
+
+  <div class="w3-container" id="contact">
+    <h2>Contact</h2>
+    <p>If you have any questions, do not hesitate to ask them.</p>
+    <i class="fa fa-map-marker w3-text-red" style="width:30px"></i> Chicago, US<br>
+    <i class="fa fa-phone w3-text-red" style="width:30px"></i> Phone: +00 151515<br>
+    <i class="fa fa-envelope w3-text-red" style="width:30px"> </i> Email: mail@mail.com<br>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message" required name="Message"></p>
+      <p><button class="w3-button w3-black w3-padding-large" type="submit">SEND MESSAGE</button></p>
+    </form>
+  </div>
+
+<!-- End page content -->
+</div>
+
+<!--#####################################################--><!--#####################################################-->
+<!--#####################################################--><!--#####################################################-->
+<!--#####################################################--><!--#####################################################-->
+<!--#####################################################--><!--#####################################################-->
+
+<!--Botao do carrinho-->
+
+<button onclick="openNav()" id="myBtn" title="Carrinho"><span id="pop" style="background-color: white; border-radius: 100px;padding: 10px;color: black;font-weight: bold;" >0</span>  <span class="price" style="color:white">
+    <i style="font-size: 29px;" class="fa fa-shopping-cart"></i>
+
+  </span></button>
+
+
+
+
+<!--Carrinho -->
+<div id="myNav" class="overlay">
+    
+       
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+     
+    
+    <div class="overlay-content">
+        <div class="w3-container" id="contact" style="color: white;">
+          
+            <h2>Finalize seu pedido</h2>
+           <br><br>
+
+            <div class="row"> <!--bloco Carrinho-->
+                <div class="col-75">
+                  <div class="container">
+                    <form action="">
+              
+                      <div class="row">
+                        <div class="col-50">
+                          <h3>Preencha os campos abaixo</h3>
+                          <label for="fname"><i class="fa fa-user"></i> Nome e Sobrenome</label>
+                          <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+                          <input type="text" id="email" name="email" placeholder="john@example.com">
+                          <label for="adr"><i class="fa fa-address-card-o"></i> Endereço</label>
+                          <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+                          <label for="city"><i class="fa fa-institution"></i> Cidade</label>
+                          <input type="text" id="city" name="city" placeholder="New York">
+              
+                          <div class="row">       
+                            <div class="col-50">
+                              <label for="zip">Cep</label>
+                              <input type="text" id="zip" name="zip" placeholder="10001">
+                            </div>
+                          </div>
+                        </div>
+              
+                        <div class="col-50">
+                          <h3>Forma de Pagamento</h3>
+                       
+                          <div class="icon-container">
+                            <i class="fa fa-cc-visa" style="color:navy;"></i>
+                            <i class="fa fa-cc-amex" style="color:blue;"></i>
+                            <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                            <i class="fa fa-cc-discover" style="color:orange;"></i>
+                          </div>
+                          <!--///\\\\\\\\\\\\\\\////////////////////////////////////////////-->
+                          Dinheiro: <input type="checkbox" id="myCheck" onclick="myFunction()">
+
+                          <div id ='text' style='display: none;'class="col-50">
+                            <label for="Troco"></label>
+                            <input type="text" id="Troco" name="expyear" placeholder="Troco Para Quanto ?">
+                          </div>
+
+                          <!--///\\\\\\\\\\\\\\\////////////////////////////////////////////-->
+                          <div>PIX: <input type="checkbox" id="myCheckPix" onclick="Pix()"></div>
+
+                          <div id="pixBox" style="display: none;">
+                             <!-- Chave PIX -->
+                          <input type="text" value="0101011100" id="pix" readonly>
+                          <!-- The button used to copy the chave PIX-->
+                          <button type="button" onclick="copiar()">Copiar Chave</button>
+                          </div>
+                          <!--///\\\\\\\\\\\\\\\////////////////////////////////////////////-->
+
+                          <div>Cartão: <input type="checkbox" id="myCheckCartao" onclick="Cartao()"></div>
+
+                          <div id="cartaoBox" style="display: none;">
+                            <label for="Bandeira"></label>
+                            <input type="text" id="Bandeira" name="bandeira" placeholder="Digite sua Bandeira">
+                          </div>
+
+                          
+                          <!--///\\\\\\\\\\\\\\\////////////////////////////////////////////-->  
+                          
+                        </div>
+              
+                      </div>
+                      <label>
+                        <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+                      </label>
+                      <input type="submit" value="Continue to checkout" class="btn">
+                    </form>
+                  </div>
+                </div>
+              
+                <div class="col-25">
+                  <div class="container">
+                    <h4>Cart
+                      <span class="price" style="color:black">
+                        <i class="fa fa-shopping-cart"></i>
+                        <b>4</b>
+                      </span>
+                    </h4>
+                    <p><a id="car">Product 1</a> <span class="price">$15</span></p>
+                    <p><a href="#">Product 2</a> <span class="price">$5</span></p>
+                    <p><a href="#">Product 3</a> <span class="price">$8</span></p>
+                    <p><a href="#">Product 4</a> <span class="price">$2</span></p>
+                    <hr>
+                    <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+                  </div>
+                </div>
+              </div> 
+              <!--bloco carrinho-->
+           
+          </div>
+    </div>
+  </div>
+  
+ 
+
+
+
+
+<!-- Footer -->
+<footer class="w3-padding-32 w3-black w3-center w3-margin-top">
+  <h5>Find Us On</h5>
+  <div class="w3-xlarge w3-padding-16">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+  <p>Powered by <a href="Maicon soares" target="_blank" class="w3-hover-text-green">Maicon.soares</a></p>
+</footer>
+
+<!-- Add Google Maps -->
+<script>
+function myMap() {
+  myCenter=new google.maps.LatLng(41.878114, -87.629798);
+  var mapOptions= {
+    center:myCenter,
+    zoom:12, scrollwheel: false, draggable: false,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+
+  var marker = new google.maps.Marker({
+    position: myCenter,
+  });
+  marker.setMap(map);
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+
+
+<script>
+  // logica que exibe os igredientes ao clicar no botão
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    }
+    </script>
+
+ 
+
+
+
+
+
+
+    <script>
+      //Logica responsavel por exibir o menu
+    function openNav() {
+      document.getElementById("myNav").style.width = "100%";
+      document.getElementById('myBtn').style.display = 'none';
+    }
+    
+    function closeNav() {
+      document.getElementById("myNav").style.width = "0%";
+      document.getElementById('myBtn').style.display = 'block';
+    }
+    </script>
+         
+
+
+
+<script>
+  //logica usada para pegar dados selecionados pelo usuario
+    
+    const registro = [] // Array que armazena os Valores de cada item
+
+const additemNoAray = ()=>{ // Função que e disparada quando o usuario clica em add ao carrinho 
+    
+    if(registro.length>5){
+        alert('err')
+    }
+
+    else{
+        const Xsalada = document.getElementById('Xsalada')
+    const ad = registro.push(Xsalada) //INSERINDO DADO NO ARRAY
+
+
+    // Bloco que retorna a quantidade de itens no aray (Carrinho)
+    document.getElementById('pop').innerHTML = registro.length
+    console.log(registro)
+}
+
+}
+ 
+</script>
+
+<script>
+  //DINHEIRO
+  //Logica resonsavel por exibir texto apor o checkbox SER TRUE
+  //Função que checa se a Box esta marcada ou não
+  function myFunction() {
+  // Get the checkbox
+  var checkBox = document.getElementById("myCheck");
+  // Get the output text
+  var text = document.getElementById("text");
+
+  // If the checkbox is checked, display the output text
+  if (checkBox.checked == true){
+    text.style.display = "block";
+  } else {
+    text.style.display = "none";
+  }
+}
+</script>
+
+<script>
+  var value = 'Xis salada'
+  var car = document.getElementById('car').innerHTML = value
+</script>
+
+
+<script>// copiando a chave pix
+  function copiar() {
+  // Get the text field
+  var copyText = document.getElementById("pix");
+
+  // Select the text field
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); // For mobile devices
+
+   // Copy the text inside the text field
+navigator.clipboard.writeText(copyText.value);
+
+ 
+}
+</script>
+
+<script>
+  //PIX
+  //Logica resonsavel por exibir texto apor o checkbox SER TRUE
+  //Função que checa se a Box esta marcada ou não
+  function Pix() {
+  // Get the checkbox
+  var checkBox = document.getElementById("myCheckPix");
+  // Get the output text
+  var text = document.getElementById("pixBox");
+
+  // If the checkbox is checked, display the output text
+  if (checkBox.checked == true){
+    text.style.display = "block";
+  } else {
+    text.style.display = "none";
+  }
+}
+</script>
+
+<script>
+  //PIX
+  //Logica resonsavel por exibir texto apor o checkbox SER TRUE
+  //Função que checa se a Box esta marcada ou não
+  function Cartao() {
+  // Get the checkbox
+  var checkBox = document.getElementById("myCheckCartao");
+  // Get the output text
+  var text = document.getElementById("cartaoBox");
+
+  // If the checkbox is checked, display the output text
+  if (checkBox.checked == true){
+    text.style.display = "block";
+  } else {
+    text.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
