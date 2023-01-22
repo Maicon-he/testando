@@ -1,0 +1,20 @@
+{
+  "short_name": "Test App",
+  "name": "Web Test App",
+  "icons": [
+    {
+      "src": "icon/burger-icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icon/burger-icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/frontend/index.htm",
+  "background_color": "#3367D6",
+  "display": "standalone",
+  "theme_color": "#3367D6"
+}
