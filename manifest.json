@@ -8,7 +8,7 @@
       "sizes": "192x192"
     },
     {
-      "src": "/burger-icon.png",
+      "src": "burger-icon.png",
       "type": "image/png",
       "sizes": "512x512"
     }
