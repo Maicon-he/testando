@@ -3,12 +3,12 @@
   "name": "Web Test App",
   "icons": [
     {
-      "src": "icon/burger-icon.png",
+      "src": "burger-icon.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "icon/burger-icon.png",
+      "src": "burger-icon.png",
       "type": "image/png",
       "sizes": "512x512"
     }
