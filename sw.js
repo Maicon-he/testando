@@ -1,1 +1,1 @@
-self.addEventListener('DOMContentLoaded', function(event) {});
+self.addEventListener('fetch', function(event) {});
